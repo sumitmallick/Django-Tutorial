@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        {% block content %}
+        <a href="{% url 'create' %}">
+            <button type="button" class="btn btn-info">Create New Contact</button>
+        </a>
+        <br>
+        <br>
+        {% for contact in contact_list %}
+            <a href="{% url 'detail' contact.pk %}">{{ contact.first_name }} {{ contact.last_name }}</a>
+            <a href="{% url 'edit' contact.pk %}">
+                <button type="button" class="btn btn-info">Update</button>
+            </a>
+            <a href="{% url 'delete' contact.pk %}">
+                <button type="button" class="btn btn-info">Delete</button>
+            </a>
+            <br>
+        {% endfor %}
+        {% endblock %}
+    </body>
+</html>

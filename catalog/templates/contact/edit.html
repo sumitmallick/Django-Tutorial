@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Edit</title>
+    </head>
+    <body>
+        {% block content %}
+            <h1>Update Contacts</h1>
+            <section style="width:25%; padding-left: 25px;">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+            </section>
+        {% endblock %}
+    </body>
+</html>
